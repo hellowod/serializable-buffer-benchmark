@@ -32,7 +32,7 @@ int main(int argc, const char *argv[])
 	}
 	gettimeofday(&end, NULL);
 	timersub(&end, &start, &diff);
-	printf("encode: loop = %d, time diff = %lldms\n",
+	printf("encode: loop = %d, time diff = %lums\n",
 				top,
 				diff.tv_sec * 1000L + diff.tv_usec / 1000L);
 
@@ -45,7 +45,7 @@ int main(int argc, const char *argv[])
 	}
 	gettimeofday(&end, NULL);
 	timersub(&end, &start, &diff);
-	printf("decode: loop = %d, time diff = %lldms\n",
+	printf("decode: loop = %d, time diff = %lums\n",
 			top, diff.tv_sec * 1000L + diff.tv_usec / 1000L);
 
 	// output

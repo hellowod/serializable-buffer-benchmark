@@ -18,7 +18,6 @@ OBJ_DIR		= ./obj
 BIN_DIR		= ./bin
 BIN			= tellist_pb
 
-
 INC			= $(PB_INC) -I./ -I$(INC_DIR)
 LIB			= $(PB_LIB)
 

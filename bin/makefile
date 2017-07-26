@@ -6,7 +6,8 @@
 CC			= gcc
 CFLAGS		= -g
 CX			= g++
-CXFLAGS		= -O3 -Werror
+#CXFLAGS		= -O3 -Werror
+CXFLAGS		= -O3 -Werror -std=c++11
 CX_MACRO	=
 
 INC_DIR		= ./inc
@@ -32,10 +33,10 @@ dir:
 	@-mkdir -p $(BIN_DIR)
 
 $(OBJ_DIR)/%.o:$(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) $(INC) -o $@ -c $<
+	$(CX) $(CXFLAGS) $(CX_MACRO) $(INC) -o $@ -c $<
 
 $(BIN_DIR)/tellist:$(addprefix $(OBJ_DIR)/, tellist.o)
-	$(CC) $(CCFLAGS) -o $@ $^ $(LIB)
+	$(CX) $(CXFLAGS) $(CX_MACRO) -o $@ $^ $(LIB)
 
 strip:
 	strip $(addprefix $(BIN_DIR)/,$(BIN))

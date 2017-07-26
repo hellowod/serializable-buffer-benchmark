@@ -33,8 +33,7 @@ int main(int argc, const char *argv[])
 	}
 	gettimeofday(&end, NULL);
 	timersub(&end, &start, &diff);
-	printf("encode: loop = %d, time diff = %lldms\n",
-			top, diff.tv_sec * 1000L + diff.tv_usec / 1000L);
+	printf("encode: loop = %d, time diff = %lums\n", top, (diff.tv_sec * 1000L + diff.tv_usec / 1000L));
 
 	// decode test
 	gettimeofday(&start, NULL);
@@ -45,8 +44,7 @@ int main(int argc, const char *argv[])
 	}
 	gettimeofday(&end, NULL);
 	timersub(&end, &start, &diff);
-	printf("decode: loop = %d, time diff = %lldms\n",
-			top, diff.tv_sec * 1000L + diff.tv_usec / 1000L);
+	printf("decode: loop = %d, time diff = %lums\n", top, (diff.tv_sec * 1000L + diff.tv_usec / 1000L));
 
 	// memory test
 	len = sizeof(buf);
